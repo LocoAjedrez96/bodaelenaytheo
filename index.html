@@ -5,58 +5,49 @@
 
   e.preventDefault();
 
-  const data = {
+  const inputs = rsvpForm.querySelectorAll("input");
+const textarea = rsvpForm.querySelector("textarea");
 
-    contact_name:
-      document.querySelector(
-        'input[name="contact_name"]'
-      )?.value || "",
+const data = {
 
-    email:
-      document.querySelector(
-        'input[type="email"]'
-      )?.value || "",
+  contact_name: inputs[0]?.value || "",
 
-    attend:
-      document.querySelector(
-        'input[name="attend"\]:checked'
-      )?.value || "",
+  email: inputs[1]?.value || "",
 
-    guest_count:
-      document.querySelector(
-        '#guestCount'
-      )?.value || "",
+  attend:
+    document.querySelector(
+      'input[type="radio"\]:checked'
+    )?.nextElementSibling?.textContent || "",
 
-    guests:
-      Array.from(
-        document.querySelectorAll(
-          '#guestNames input'
-        )
-      )
-      .map(x => x.value)
-      .join(', '),
+  guest_count:
+    document.querySelector("#guestCount")?.value || "",
 
-    arrival:
-      document.querySelector(
-        'input[type="date"]'
-      )?.value || "",
-
-    departure:
+  guests:
+    Array.from(
       document.querySelectorAll(
-        'input[type="date"]'
-      )[1]?.value || "",
+        "#guestNames input"
+      )
+    )
+    .map(x => x.value)
+    .join(", "),
 
-    diet:
-      document.querySelector(
-        'input[name="diet"]'
-      )?.value || "",
+  arrival:
+    document.querySelectorAll(
+      'input[type="date"]'
+    )[0]?.value || "",
 
-    message:
-      document.querySelector(
-        'textarea'
-      )?.value || ""
+  departure:
+    document.querySelectorAll(
+      'input[type="date"]'
+    )[1]?.value || "",
 
-  };
+  diet:
+    inputs[inputs.length - 2]?.value || "",
+
+  message:
+    textarea?.value || ""
+
+};
 
   try {
 
