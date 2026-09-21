@@ -42,7 +42,9 @@ const data = {
     )[1]?.value || "",
 
   diet:
-    inputs[inputs.length - 2]?.value || "",
+document.querySelectorAll("input")[
+document.querySelectorAll("input").length - 1
+]?.value || "",
 
   message:
     textarea?.value || ""
