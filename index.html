@@ -107,17 +107,22 @@ const data = {
   song: song,
   artist: artist
 };
+const data = {
+  formType: "playlist",
+  song: song,
+  artist: artist
+};
 
 await fetch(
-"https://script.google.com/macros/s/AKfycbzVNI9YAOrwYfpsfB5diUrJDBOOY_QiQJiMwEDkh1IJaFrliq3ptLc9wcf6vQuC9C_D/exec",
-{
-  method: "POST",
-  mode: "no-cors",
-  headers: {
-    "Content-Type": "application/json"
-  },
-  body: JSON.stringify(data)
-}
+  "https://script.google.com/macros/s/AKfycbzVNI9YAOrwYfpsfB5diUrJDBOOY_QiQJiMwEDkh1IJaFrliq3ptLc9wcf6vQuC9C_D/exec",
+  {
+    method: "POST",
+    mode: "no-cors",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(data)
+  }
 );
  
   playlistForm.innerHTML =
